@@ -144,6 +144,13 @@ godoc: ## Run a webserver with Gotenberg godoc (go get golang.org/x/tools/cmd/go
 	$(info http://localhost:6060/pkg/github.com/gotenberg/gotenberg/v7)
 	godoc -http=:6060
 
+toucan-docker-tag:
+	docker tag docker.io/gotenberg/gotenberg:${GOTENBERG_VERSION} quay.io/toucantoco/gotenberg:${GOTENBERG_VERSION}
+
+toucan-docker-push:
+	docker push quay.io/toucantoco/gotenberg:${GOTENBERG_VERSION}
+	
+
 .PHONY: release
 release: ## Build the Gotenberg's Docker image for many platforms, then push it to a Docker repository
 	./scripts/release.sh \
