@@ -35,6 +35,7 @@ pipeline {
           storeStage()
           sh """
             source ${ToucanVars.JENKINS_SOURCE_SCRIPT}
+            make build GOTENBERG_VERSION=${params.GOTENBERG_VERSION}
             make toucan-docker-tag GOTENBERG_VERSION=${params.GOTENBERG_VERSION}
             make toucan-docker-push GOTENBERG_VERSION=${params.GOTENBERG_VERSION}
           """
