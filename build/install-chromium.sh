@@ -11,5 +11,5 @@ if [[ "$ARCH" == "amd64" ]]; then
   DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends --allow-unauthenticated google-chrome-stable
   mv /usr/bin/google-chrome-stable /usr/bin/chromium
 else
-  DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends chromium=107.0.5304.68-1
+  DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends chromium=111.0.5563.64
 fi
