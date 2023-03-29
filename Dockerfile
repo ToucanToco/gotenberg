@@ -1,4 +1,4 @@
-FROM --platform=arm64 thecodingmachine/gotenberg:6.4.4
+FROM thecodingmachine/gotenberg:6.4.4
 
 # Switch to root
 USER root
