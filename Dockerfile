@@ -10,6 +10,8 @@ RUN curl https://dl.google.com/linux/linux_signing_key.pub | apt-key add - &&\
     apt-get install --no-install-recommends -y --allow-unauthenticated google-chrome-stable=111.0.5563.146-1 &&\
     rm -rf /var/lib/apt/lists/*
 
+ENTRYPOINT [ "/tini", "--" ]
+
 # Switch to gotenberg user
 USER gotenberg
 WORKDIR /gotenberg
