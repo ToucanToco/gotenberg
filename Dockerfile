@@ -10,5 +10,9 @@ RUN curl https://dl.google.com/linux/linux_signing_key.pub | apt-key add - &&\
     apt-get install --no-install-recommends -y --allow-unauthenticated google-chrome-stable=111.0.5563.146-1 &&\
     rm -rf /var/lib/apt/lists/*
 
-# Switch back to gotenberg user
+# Switch to gotenberg user
 USER gotenberg
+WORKDIR /gotenberg
+
+EXPOSE 3000
+CMD [ "gotenberg" ]
